@@ -1,0 +1,16 @@
+.navbar-brand{
+    width: 120px;
+}
+
+.navbar{
+    padding: 0 20px;
+}
+
+.form-control{
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.navbar-nav{
+    margin-left: 18%;
+}

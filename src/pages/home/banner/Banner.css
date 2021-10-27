@@ -1,0 +1,27 @@
+.banner{
+    background: linear-gradient(rgba(1, 35, 75, 0.5), rgba(22, 48, 3, 0.5)) , url('https://image.freepik.com/free-photo/young-handsome-physician-medical-robe-with-stethoscope_1303-17818.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    min-height: 100vh;
+    padding: 250px 0 250px;
+}
+
+.common-btn{
+    margin-right: 12px;
+    border: 2px solid #02123a;
+    border-radius: 30px;
+    padding: 15px;
+    background-color: #02123a;
+    color: white;
+    font-weight: bold;
+}
+
+.common-btn:hover{
+    background-color: #02123a00;
+    box-shadow: 0 10px 10px rgb(0 0 0 / 0.2);
+    color: #02123a;
+}
+.banner-title{
+    font-family: 'Lobster', cursive;
+}
