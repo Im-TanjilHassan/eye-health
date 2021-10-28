@@ -12,7 +12,7 @@ const BottomAbout = () => {
                     <h2 className='about-title text-primary mb-5'>Providing Care For The Sickest</h2>
                     <div className='row gap-5 ms-5'>
                         <div className='col-lg-3 col-sm-12'>
-                            <div class="card" style={{width: '18rem'}}>
+                            <div class="card about-card" style={{width: '18rem'}}>
                                 <div className='row pt-3 ps-3 mb-3'>
                                     <div className='col-6 text-center fs-2'>
                                         {<i className="fas fa-user-md icon"></i>}
@@ -26,7 +26,7 @@ const BottomAbout = () => {
                             </div>
                         </div>
                         <div className='col-lg-3 col-sm-12'>
-                        <div class="card" style={{width: '18rem'}}>
+                        <div class="card about-card" style={{width: '18rem'}}>
                                 <div className='row pt-3 ps-3 mb-3'>
                                     <div className='col-6 text-center fs-2'>
                                         {<i class="fas fa-eye icon"></i>}
@@ -40,7 +40,7 @@ const BottomAbout = () => {
                             </div>
                         </div>
                         <div className='col-lg-3 col-sm-12'>
-                        <div class="card" style={{width: '18rem'}}>
+                        <div class="card about-card" style={{width: '18rem'}}>
                                 <div className='row pt-3 ps-3 mb-3'>
                                     <div className='col-6 text-center fs-2'>
                                         {<i class="fas fa-user icon"></i>}
@@ -54,7 +54,7 @@ const BottomAbout = () => {
                             </div>
                         </div>
                         <div className='col-lg-3 col-sm-12'>
-                        <div class="card" style={{width: '18rem'}}>
+                        <div class="card about-card" style={{width: '18rem'}}>
                                 <div className='row pt-3 ps-3 mb-3'>
                                     <div className='col-6 text-center fs-2'>
                                         {<i className="fas fa-user-md icon"></i>}

@@ -1,6 +1,7 @@
 import React from 'react';
 import './Footer.css'
 import logoimg from '../../../img/logo/site-logo.png'
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -8,7 +9,9 @@ const Footer = () => {
             <div className='container'>
                 <div className='row'>
                     <div>
-                        <img className='footer-img' src={logoimg} alt="" />
+                        <Link to='/home'>
+                            <img className='footer-img' src={logoimg} alt="" />
+                        </Link>
                         <div className='row text-white gap-3'>
                             <div className='col-lg-4 col-sm-12'>
                                 <h3>Contact</h3>

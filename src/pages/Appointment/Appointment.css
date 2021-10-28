@@ -1,0 +1,10 @@
+.appointment{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding-bottom: 5%;
+    background: linear-gradient(rgba(1, 35, 75, 0.5), rgba(22, 48, 3, 0.5)), url('https://image.freepik.com/free-photo/woman-working-as-doctor_23-2148827818.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+}
