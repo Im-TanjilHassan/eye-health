@@ -1,0 +1,15 @@
+.card-img{
+    width: 200px;
+    height: 203px;
+}
+
+.full-card{
+    background-color: gainsboro;
+    width: 500px;
+    margin-left: 5%;
+    padding: 8px;
+}
+
+.full-card:hover{
+    box-shadow: 0 10px 10px rgb(0 0 0 / 0.2);
+}

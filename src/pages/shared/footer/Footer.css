@@ -1,0 +1,18 @@
+.footer{
+    background-color: #020016;
+    padding-top: 3%;
+
+}
+
+.footer-img{
+    width: 150px;
+    margin-bottom: 15px;
+}
+
+.footer-bottom{
+    text-align: center;
+    background-color: black;
+    color: gray;
+    font-weight: bold;
+    padding: 3%;
+}

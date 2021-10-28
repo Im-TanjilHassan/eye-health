@@ -1,12 +1,14 @@
-.h-about{
-    padding-top: 80px;
-    margin-bottom: 80px;
+.top-about{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding-bottom: 15px;
 }
 
-.h-about-img{
+.about-img{
     width: 500px;
     margin-bottom: 20px;
 }
+
 
 .about-title{
     font-family: 'Lobster', cursive;

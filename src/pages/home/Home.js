@@ -1,6 +1,7 @@
 import React from 'react';
 import HAbout from './about-us/HAbout';
 import Banner from './banner/Banner';
+import Faq from './FAQ/Faq';
 import HServices from './home-services/HServices';
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
             <Banner></Banner>
             <HAbout></HAbout>
             <HServices></HServices>
+            <Faq></Faq>
         </div>
     );
 };

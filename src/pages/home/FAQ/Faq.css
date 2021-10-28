@@ -1,0 +1,16 @@
+.faq{
+    padding-bottom: 30px;
+    margin-top: 80px;
+    margin-bottom: 50px;
+    position: relative;
+    background: linear-gradient(rgba(75, 52, 52, 0.5), rgba(15, 35, 88, 0.5)) ,url('https://image.freepik.com/free-photo/female-doctor-hospital-with-stethoscope_23-2148827775.jpg');
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.accordion{
+    width: 500px;
+    margin-top: 8%;
+}
