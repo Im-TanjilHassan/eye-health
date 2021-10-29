@@ -2,8 +2,16 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Header.css'
 import logo from '../../../img/logo/site-logo.png'
+import useAuth from '../../../hooks/useAuth';
 
 const Header = () => {
+
+    const {user, emailLogout} = useAuth()
+
+    const logout = () => {
+        emailLogout()
+    }
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -32,7 +40,12 @@ const Header = () => {
                                 <NavLink className="nav-link fw-bold " to='/appointment'>Appointment</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link fw-bold " to='/login'>Log-In</NavLink>
+                                { user.email ? <button onClick={logout} className="nav-link fw-bold " style={{border: 'none', backgroundColor:'none'}}>Log-Out</button> :
+                                <NavLink className="nav-link fw-bold " to='/login'>Log-In</NavLink>}
+                                
+                            </li>
+                            <li className="nav-item">
+                                <p className="nav-link fw-bold active">User: {user.displayName}</p>
                             </li>
                         </ul>
                         <form className="d-flex">
