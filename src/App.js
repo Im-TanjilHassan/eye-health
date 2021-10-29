@@ -8,6 +8,7 @@ import Login from './pages/login and signup/login/Login';
 import SignUp from './pages/login and signup/signUp/SignUp';
 import Team from './pages/Our team/Team';
 import NotFound from './pages/page not found/NotFound';
+import PrivateRoute from './pages/private Route/PrivateRoute';
 import ServiceDetail from './pages/services/serviceDetail/ServiceDetail';
 import Services from './pages/services/Services';
 import Footer from './pages/shared/footer/Footer';
@@ -32,18 +33,18 @@ function App() {
             <Route path='/service'>
               <Services></Services>
             </Route>
-            <Route path='/serviceDetail/:serviceId'>
+            <PrivateRoute path='/serviceDetail/:serviceId'>
               <ServiceDetail></ServiceDetail>
-            </Route>
+            </PrivateRoute>
             <Route path='/about'>
               <About></About>
             </Route>
             <Route path='/team'>
               <Team></Team>
             </Route>
-            <Route path='/appointment'>
+            <PrivateRoute path='/appointment'>
               <Appointment></Appointment>
-            </Route>
+            </PrivateRoute>
             <Route path='/login'>
               <Login></Login>
             </Route>

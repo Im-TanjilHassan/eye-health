@@ -13,7 +13,7 @@ const useFirebase = () => {
     const [error, setError] = useState('')
 
     // user
-    const [user, setUser] = useState('')
+    const [user, setUser] = useState({})
 
     //------------------ email and password sign up ----------------------
     const emailPassAuth = (email, password) => {
