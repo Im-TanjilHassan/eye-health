@@ -1,5 +1,5 @@
 import firebaseAuthInit from "../firebase/firebase.init";
-import { getAuth, createUserWithEmailAndPassword, signOut, onAuthStateChanged,signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signInWithRedirect ,  } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signOut, onAuthStateChanged,signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signInWithRedirect , getRedirectResult } from "firebase/auth";
 import { useEffect, useState } from "react";
 
 firebaseAuthInit()
@@ -9,6 +9,9 @@ const googleProvider = new GoogleAuthProvider()
 
 const useFirebase = () => {
 
+    // loading
+    const [isLoading, setLoading] = useState(true)
+
     // error
     const [error, setError] = useState('')
 
@@ -17,63 +20,38 @@ const useFirebase = () => {
 
     //------------------ email and password sign up ----------------------
     const emailPassAuth = (email, password) => {
-        createUserWithEmailAndPassword(auth, email, password)
-            .then(result => {
-                const user = result.user
-                setUser(user)
-                setError('')
-            })
-            .catch(error => {
-                setError(error.message)
-            })
+        setLoading(true)
+        return createUserWithEmailAndPassword(auth, email, password)
     }
 
     // login process
     const login = (email, password) => {
-        signInWithEmailAndPassword(auth, email, password)
-
-        .then(result => {
-            const user = result.user
-            setUser(user)
-            setError('')
-            console.log(user)
-        })
-        .catch(error => {
-            setError(error.message)
-        })
+        setLoading(true)
+        return signInWithEmailAndPassword(auth, email, password)
     }
 
     // logout process
     const emailLogout = () => {
-        signOut(auth).then(() => {
+        signOut(auth)
+        .then(() => {
             setUser('')
         })
+        .finally(() => setLoading(false))
     }
 
     //------------- google signup ----------------
 
     // signup with pop up
     const googleSignUp =() => {
-        signInWithPopup(auth, googleProvider)
-        .then(result => {
-            const user = result.user
-            setUser(user)
-            console.log(user)
-            setError('')
-        })
-        .catch(error => {
-            setError(error.message)
-        })
+        setLoading(true)
+        return signInWithPopup(auth, googleProvider)
     }
 
     // redirect log in
     const googleLogin = () => {
+        setLoading(true)
         signInWithRedirect(auth, googleProvider)
-        .then(result => {
-            const user = result.user
-            setUser(user)
-            console.log(user)
-        })
+        return getRedirectResult(auth)
     }
 
     //-------------- observer --------------------
@@ -82,12 +60,18 @@ const useFirebase = () => {
             if (user) {
                 setUser(user)
             }
+            else{
+                setUser({})
+            }
+            setLoading(false)
         })
     }, [])
     return {
         user,
         error,
         setError,
+        setLoading,
+        isLoading,
         emailPassAuth,
         login,
         emailLogout,

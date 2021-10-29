@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import './Login.css'
 
 const Login = () => {
 
-    const {login, error, googleLogin, setError} = useAuth()
+    const {login, error, googleLogin, setError, setLoading} = useAuth()
+
+    const history = useHistory()
+    const location = useLocation()
+    const redirect_uri = location.state?.from || '/home'
 
     // get email
     const [email, setEmail] = useState()
@@ -26,11 +30,23 @@ const Login = () => {
             return
         }
         login(email, password)
+        .then(result => {
+            history.push(redirect_uri)
+        })
+        .finally(() => setLoading(false))
+        .catch(error => {
+            setError(error.message)
+        })
+        
     }
 
     // google sign in
     const googleSignIn = () => {
         googleLogin()
+        .then(result => {
+            history.push(redirect_uri)
+        })
+        .finally(() => setLoading(false))
     }
 
     return (

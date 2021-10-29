@@ -40,12 +40,12 @@ const Header = () => {
                                 <NavLink className="nav-link fw-bold " to='/appointment'>Appointment</NavLink>
                             </li>
                             <li className="nav-item">
-                                { user.email ? <button onClick={logout} className="nav-link fw-bold " style={{border: 'none', backgroundColor:'none'}}>Log-Out</button> :
+                                { user.email ? <button onClick={logout} className="nav-link fw-bold " style={{border: 'none', backgroundColor:'none'}}>Log-Out:</button> :
                                 <NavLink className="nav-link fw-bold " to='/login'>Log-In</NavLink>}
                                 
                             </li>
                             <li className="nav-item">
-                                <p className="nav-link fw-bold active">User: {user.displayName}</p>
+                                <p className="nav-link fw-bold active"> {user.displayName? user.displayName : user.email}</p>
                             </li>
                         </ul>
                         <form className="d-flex">

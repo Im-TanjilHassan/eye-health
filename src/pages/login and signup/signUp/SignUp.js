@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 // import useFirebase from '../../../hooks/useFirebase';
 import './SignUp.css'
 
 const SignUp = () => {
 
-    const {error ,emailPassAuth, googleSignUp, setError} = useAuth()
+    const {error ,emailPassAuth, googleSignUp, setError, setLoading} = useAuth()
+    const history = useHistory()
+    const location = useLocation()
+    const redirect_uri = location.state?.from || '/home'
 
     // get email
     const [email, setEmail] = useState()
@@ -29,11 +32,25 @@ const SignUp = () => {
             return
         }
         emailPassAuth(email, password)
+        .then(result => {
+            history.push(redirect_uri)
+        })
+        .finally(() => setLoading(false))
+        .catch(error => {
+            setError(error.message)
+        })
     }
 
-    // google sighn up
+    // google sign up
     const googleRegister = () => {
         googleSignUp()
+        .then(result => {
+            history.push(redirect_uri)
+        })
+        .finally(() => setLoading(false))
+        .catch(error => {
+            setError(error.message)
+        })
     }
 
 
